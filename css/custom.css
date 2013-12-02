@@ -3,3 +3,53 @@
 .jumbotron {
 	margin-top: 40px;
 }
+
+/* [class^=fav], [class*=fav], [class^=fav]:hover, [class*=fav]:hover {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin-top: 1px;
+  *margin-right: .3em;
+  line-height: 14px;
+  vertical-align: text-top;
+  background-image: url("data:image/png;base64,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");
+  background-position: 14px 14px;
+  background-repeat: no-repeat;
+} */
+[class^=favicon] {
+	background-image: url("../img/favicons.gif"); 
+	display : inline-block;
+	width: 14px;
+	height: 14px;
+	margin-top: 1px;
+	margin-right: 5px;
+	line-height: 14px;
+	vertical-align: text-top;
+	background-position: 14px 14px;
+	background-repeat: no-repeat;
+	display: inline-block;
+}
+
+.favicon-gmail {
+	background-position: 0px 0px;
+}
+
+.favicon-github {
+	background-position: -14px 0px;
+}
+
+.favicon-linkedin {
+	background-position: -28px 0px;
+}
+
+.favicon-stack {
+	background-position: 0px -14px;
+}
+
+.favicon-delicious {
+	background-position: -14px -14px;
+}
+
+.favicon-flickr {
+	background-position: -28px -14px;
+}
