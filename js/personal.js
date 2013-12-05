@@ -1,9 +1,9 @@
 $(document).ready(function() {
 	var SIZE = 14;
-	var WIDTH = 3;
+	var WIDTH = 4;
 	var HEIGHT = 2;
 
-	function tile() {
+	function tiled_favicon() {
 		var li = $("i[class^=favicon");
 		var left = 0;
 		var top = 0;
@@ -16,5 +16,23 @@ $(document).ready(function() {
 			}
 		}
 	}
-	tile();
+
+	function stripTrailingSlash(str) {
+		if (str.substr(-1) == '/') {
+			return str.substr(0, str.length - 1);
+		}
+		return str;
+	}
+
+	var url = window.location.pathname;
+	var activePage = stripTrailingSlash(url);
+
+	$('.nav li a').each(function() {
+		var currentPage = stripTrailingSlash($(this).attr('href'));
+		if (activePage == currentPage) {
+			$(this).parent().addClass('active');
+		}
+	});
+
+	tiled_favicon();
 });

@@ -31,8 +31,7 @@ body {
 	<!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
-
-	<div class="navbar navbar-inverse navbar-fixed-top">
+	<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 	<div class="container">
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle" data-toggle="collapse"
@@ -43,38 +42,50 @@ body {
 			<a class="navbar-brand" href="/">Andrea Marangoni</a>
 		</div>
 		<div class="navbar-collapse collapse">
-			<ul class="nav navbar-nav pull-left">
-				<li class="active"><a href="/">Home</a></li>
-				<li><a href="/articles">Articles</a></li>
-				<li><a href="/projects">Projects</a></li>
-				<li><a href="/about">About</a></li>
+			<ul class="nav navbar-nav pull-left" id="tabs">
+				<li id="home"><a href="/">Home</a></li>
+				<li id="articles"><a href="/articles">Articles</a></li>
+				<li id="projects"><a href="/projects">Projects</a></li>
+				<!-- <li id="projects"><a href="/Music">Music</a></li> -->
+				<li id="about"><a href="/about">About</a></li>
 				<li class="dropdown"><a href="#" class="dropdown-toggle"
 					data-toggle="dropdown"><i class="icon-globe"></i>Contacts <b
 						class="caret"></b></a>
 					<ul class="dropdown-menu">
-						<li><a href="#"><i class="favicon-gmail"></i>gmail</a></li>
-						<li><a href="#"><i class="favicon-github"></i>github.com</a></li>
-						<li><a href="#"><i class="favicon-linkedin"></i>linkedin</a></li>
-						<li><a href="#"><i class="favicon-stack"></i>stackoverflow</a></li>
-						<li><a href="#"><i class="favicon-delicious"></i>delicious</a></li>
-						<li><a href="#"><i class="favicon-flickr"></i>flickr</a></li>
+						<li><a href=mailto:andrea.marangoni.1984@gmail.com><i class="favicon-gmail"></i>gmail</a></li>
+						<li><a href=http://andreamarangoni.github.com><i class="favicon-github"></i>github.com</a></li>
+						<li><a href=http://uk.linkedin.com/pub/andrea-marangoni/3b/267/6a/><i class="favicon-linkedin"></i>linkedin</a></li>
+						<li><a href=skype:andrea.marangoni.1984><i class="favicon-skype"></i>skype</a></li>
+						<li><a href=http://stackoverflow.com/users/1018585/andrea-marangoni><i class="favicon-stack"></i>stackoverflow</a></li>
+						<li><a href=http://delicious.com/andreamarangoni><i class="favicon-delicious"></i>delicious</a></li>
+						<li><a href=http://www.flickr.com/photos/62407856@N03/><i class="favicon-flickr"></i>flickr</a></li>
+						<li></li>
 					</ul></li>
 			</ul>
 		</div>
 		<!--/.navbar-collapse -->
 	</div>
 </div>
+	
 
-	<div class="container"><h1> HEADER </h1>
+	<div class="container"><h1>Default layout for Articles</h1>
+
+<h1>Articles</h1>
 
 <ul>
-<li>First</li>
-<li>2</li>
-<li>3</li>
-<li>4</li>
-<li>5</li>
-<li>6</li>
-</ul></div>
+  
+  
+  
+  
+    <li>
+      <a href="/2013/12/02/First-Article.html">First Article</a>
+      <p><h1>This is my first ARTICLE</h1>
+</p>
+    </li>
+  
+  
+</ul>
+</div>
 
 	<div class="container">
 	<hr>
@@ -87,7 +98,7 @@ body {
 	<script>
 		window.jQuery
 				|| document
-						.write('<script src="./js/vendor/jquery-1.10.1.js"><\/script>')
+						.write('<script src="/js/vendor/jquery-1.10.1.js"><\/script>')
 	</script>
 
 	<script src="/js/vendor/bootstrap.min.js"></script>

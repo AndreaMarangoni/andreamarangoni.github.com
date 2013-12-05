@@ -4,9 +4,9 @@
 	margin-top: 40px;
 }
 
-[class^=favicon] {
-	background-image: url("../img/favicons.gif"); 
-	display : inline-block;
+[class^=favicon],[class*=fav],[class^=fav]:hover,[class*=fav]:hover {
+	background-image: url("../img/favicons.gif");
+	display: inline-block;
 	width: 14px;
 	height: 14px;
 	margin-top: 1px;
@@ -16,4 +16,15 @@
 	background-position: 14px 14px;
 	background-repeat: no-repeat;
 	display: inline-block;
+}
+
+p.droid{
+	font: 18px/1.5 "Droid Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.center-block {
+	max-width: 650px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 }
