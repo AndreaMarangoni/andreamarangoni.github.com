@@ -15,12 +15,6 @@
 <meta name="description" content="">
 
 <link rel="stylesheet" href="/css/bootstrap.min.css">
-<style>
-body {
-	padding-top: 50px;
-	padding-bottom: 20px;
-}
-</style>
 <link rel="stylesheet" href="/css/bootstrap-theme.min.css">
 <link rel="stylesheet" href="/css/main.css">
 <link rel="stylesheet" href="/css/custom.css">
@@ -31,100 +25,79 @@ body {
 	<!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
-	<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-	<div class="container">
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle" data-toggle="collapse"
-				data-target=".navbar-collapse">
-				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
-					class="icon-bar"></span>
-			</button>
-			<a class="navbar-brand" href="/">Andrea Marangoni</a>
+
+    
+    
+<div id="header">
+	<div id="image-container">
+		<img id="image" src="../img/header-crop.jpg" />
+	</div>
+	<div id="line-menu">
+	<div id="vertical-line"></div>
+	<div id="menu" class="navbar  navbar-default navbar-fixed-top"
+		role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target=".navbar-collapse">
+					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<p class="navbar-brand">
+					ANDREA<br>
+					<br>MARANGONI
+				</p>
+			</div>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav pull-left" id="tabs">
+					<li id="about"><a href="/about"><div class="hr-line">
+								<p>ABOUT</p>
+							</div></a></li>
+					<li id="projects"><a href="/projects"><div class="hr-line">
+								<p>PROJECTS</p>
+							</div></a></li>
+					<li id="blog"><a href="/blog"><div class="hr-line">
+								<p>BLOG</p>
+							</div></a></li>
+					<!-- <li id="projects"><a href="/Music">Music</a></li> -->
+					<li class="dropdown"><a href="#" class="dropdown-toggle"
+						data-toggle="dropdown" style="background-color:white"></i>
+							<div class="hr-line">
+								<p style="color:black">CONTACTS</p>
+							</div></a>
+						<ul class="dropdown-menu">
+							<li><a href=mailto:andrea.marangoni.1984@gmail.com><i
+									class="favicon-gmail"></i>gmail</a></li>
+							<li><a href=http://andreamarangoni.github.com><i
+									class="favicon-github"></i>github.com</a></li>
+							<li><a href=http://uk.linkedin.com/pub/andrea-marangoni/3b/267/6a/><i
+									class="favicon-linkedin"></i>linkedin</a></li>
+							<li><a href=skype:andrea.marangoni.1984><i
+									class="favicon-skype"></i>skype</a></li>
+							<li><a href=http://stackoverflow.com/users/1018585/andrea-marangoni><i
+									class="favicon-stack"></i>stackoverflow</a></li>
+							<li><a href=http://delicious.com/andreamarangoni><i
+									class="favicon-delicious"></i>delicious</a></li>
+							<li><a href=http://www.flickr.com/photos/62407856@N03/><i
+									class="favicon-flickr"></i>flickr</a></li>
+							<li></li>
+						</ul></li>
+				</ul>
+			</div>
+			<!--/.navbar-collapse -->
 		</div>
-		<div class="navbar-collapse collapse">
-			<ul class="nav navbar-nav pull-left" id="tabs">
-				<li id="home"><a href="/">Home</a></li>
-				<li id="articles"><a href="/articles">Articles</a></li>
-				<li id="projects"><a href="/projects">Projects</a></li>
-				<!-- <li id="projects"><a href="/Music">Music</a></li> -->
-				<li id="about"><a href="/about">About</a></li>
-				<li class="dropdown"><a href="#" class="dropdown-toggle"
-					data-toggle="dropdown"><i class="icon-globe"></i>Contacts <b
-						class="caret"></b></a>
-					<ul class="dropdown-menu">
-						<li><a href=mailto:andrea.marangoni.1984@gmail.com><i class="favicon-gmail"></i>gmail</a></li>
-						<li><a href=http://andreamarangoni.github.com><i class="favicon-github"></i>github.com</a></li>
-						<li><a href=http://uk.linkedin.com/pub/andrea-marangoni/3b/267/6a/><i class="favicon-linkedin"></i>linkedin</a></li>
-						<li><a href=skype:andrea.marangoni.1984><i class="favicon-skype"></i>skype</a></li>
-						<li><a href=http://stackoverflow.com/users/1018585/andrea-marangoni><i class="favicon-stack"></i>stackoverflow</a></li>
-						<li><a href=http://delicious.com/andreamarangoni><i class="favicon-delicious"></i>delicious</a></li>
-						<li><a href=http://www.flickr.com/photos/62407856@N03/><i class="favicon-flickr"></i>flickr</a></li>
-						<li></li>
-					</ul></li>
-			</ul>
-		</div>
-		<!--/.navbar-collapse -->
 	</div>
 </div>
+</div>
+
 	
 
-	<div class="container"><!-- Main jumbotron for a primary marketing message or call to action -->
-<div class="container">
-	<div class="jumbotron">
-		<h1>Hello, world!</h1>
-		<p>This is a template for a simple marketing or informational
-			website. It includes a large callout called the hero unit and three
-			supporting pieces of content. Use it as a starting point to create
-			something more unique.</p>
-		<p>
-			<a class="btn btn-primary btn-lg">Learn more &raquo;</a>
-		</p>
-	</div>
-</div>
-
-	<!-- 		Example row of columns
-		<div class="row">
-			<div class="col-lg-4">
-				<h2>Heading</h2>
-				<p>Donec id elit non mi porta gravida at eget metus. Fusce
-					dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh,
-					ut fermentum massa justo sit amet risus. Etiam porta sem malesuada
-					magna mollis euismod. Donec sed odio dui.</p>
-				<p>
-					<a class="btn btn-default" href="#">View details &raquo;</a>
-				</p>
-			</div>
-			<div class="col-lg-4">
-				<h2>Heading</h2>
-				<p>Donec id elit non mi porta gravida at eget metus. Fusce
-					dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh,
-					ut fermentum massa justo sit amet risus. Etiam porta sem malesuada
-					magna mollis euismod. Donec sed odio dui.</p>
-				<p>
-					<a class="btn btn-default" href="#">View details &raquo;</a>
-				</p>
-			</div>
-			<div class="col-lg-4">
-				<h2>Heading</h2>
-				<p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in,
-					egestas eget quam. Vestibulum id ligula porta felis euismod semper.
-					Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum
-					nibh, ut fermentum massa justo sit amet risus.</p>
-				<p>
-					<a class="btn btn-default" href="#">View details &raquo;</a>
-				</p>
-			</div> 
-		</div>-->
-
-<!-- /container -->
-</div>
-
-	<div class="container">
+	<!-- <div class="container">
 	<hr>
 	<footer>
 		<p>&copy; Andrea Marangoni 2013</p>
 	</footer>
-</div>
+</div> -->
 
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.js"></script>
 	<script>
