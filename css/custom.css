@@ -75,8 +75,7 @@ body,div,img {
 	display: inline-block;
 }
 
-p.navbar-brand,.navbar-default .navbar-brand,.navbar-default .navbar-nav>li>a
-	{
+.navbar-default .navbar-brand,.navbar-default .navbar-nav>li>a {
 	color: black;
 }
 
@@ -89,11 +88,15 @@ p.navbar-brand,.navbar-default .navbar-brand,.navbar-default .navbar-nav>li>a
 	border: none;
 }
 
-.navbar-default .navbar-nav>.open>a,.navbar-default .navbar-nav>.open>a:hover,.navbar-default .navbar-nav>.open>a:focus
-.navbar-default .navbar-brand,.navbar-default .navbar-brand:hover,.navbar-default .navbar-brand:focus,.navbar-default .navbar-nav>li,.navbar-default .navbar-nav>li>a,.navbar-default .navbar-nav>li>a:hover,.navbar-default .navbar-nav>li>a:focus
+.navbar-default .navbar-nav>.open>a,.navbar-default .navbar-nav>.open>a:hover,.navbar-default .navbar-nav>.open>a:focus,.navbar-default .navbar-nav>li,.navbar-default .navbar-nav>li>a,.navbar-default .navbar-nav>li>a:hover,.navbar-default .navbar-nav>li>a:focus
 	{
 	background-color: #fff;
 	color: #000;
+}
+
+.navbar-default .navbar-brand:hover,.navbar-default .navbar-brand:focus
+	{
+	color : black;
 }
 
 ul.nav.navbar-nav {
@@ -131,7 +134,7 @@ ul.nav.navbar-nav li,.dropdown .open,.navbar-default .navbar-nav>.active>a,.navb
 }
 
 .hr-line {
-	width: 121px;
+	width: 91px;
 	height: 1px;
 	background-color: black;
 }
