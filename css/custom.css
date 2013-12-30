@@ -96,7 +96,7 @@ body,div,img {
 
 .navbar-default .navbar-brand:hover,.navbar-default .navbar-brand:focus
 	{
-	color : black;
+	color: black;
 }
 
 ul.nav.navbar-nav {
@@ -153,11 +153,22 @@ a:hover.dropdown-toggle,a:focus.dropdown-toggle {
 }
 
 div.navbar-collapse.collapse {
-	width: 1000px;
+	width: 915px;
 }
 
 footer {
+	width: 525px;
+	margin-left: auto;
+	margin-right: auto;
+	float: right;
+}
+
+div.container {
 	width: 905px;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+div.container > p {
+	font-family: 'AmericanTypewriter', Arial, sans-serif;
 }
