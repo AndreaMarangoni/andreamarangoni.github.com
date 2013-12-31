@@ -26,6 +26,15 @@ body,div,img {
 	padding: 0px;
 }
 
+h1,h2,h3,h4,h5,h6,a,p {
+	color: black;
+	font-family: 'AmericanTypewriter';
+}
+
+li {
+	list-style: none;
+}
+
 .navbar-brand {
 	font-family: 'AmericanTypewriterLightA', Arial, sans-serif;
 	font-size: 36px;
@@ -88,15 +97,13 @@ body,div,img {
 	border: none;
 }
 
-.navbar-default .navbar-nav>.open>a,.navbar-default .navbar-nav>.open>a:hover,.navbar-default .navbar-nav>.open>a:focus,.navbar-default .navbar-nav>li,.navbar-default .navbar-nav>li>a,.navbar-default .navbar-nav>li>a:hover,.navbar-default .navbar-nav>li>a:focus
-	{
+li.dropdown.open>a:focus.dropdown-toggle,
+.nav>li>a:hover,
+.nav>li>a:focus,
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
 	background-color: #fff;
 	color: #000;
-}
-
-.navbar-default .navbar-brand:hover,.navbar-default .navbar-brand:focus
-	{
-	color: black;
 }
 
 ul.nav.navbar-nav {
@@ -169,6 +176,81 @@ div.container {
 	margin-right: auto;
 }
 
-div.container > p {
-	font-family: 'AmericanTypewriter', Arial, sans-serif;
+div.container>p {
+	
 }
+
+ul#list-post-blog,ul#list-post-project {
+	padding: 0;
+	margin-top: 50px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 700px;
+}
+
+ul#list-post-blog>li, ul#list-post-project>li, .symbol-post-project {
+	margin-top: 20px;
+	font-size: 18px;
+	font-family: 'AmericanTypewriter';
+}
+
+.desc-project{
+	color: #333;
+	margin-left : 25px;
+}
+
+.date-post-blog {
+	float: right;
+}
+
+.desc-project {
+	width : 500px;
+	font-size: 16px;
+	margin-top: 6px;
+	margin-left: 10px;
+}
+
+.excerpt{
+	width: 400px;
+	margin-top: 10px;
+	margin-left: 3px;
+}
+
+.title-post-blog>a, .title-post-project>a, .date-post-blog, .cat-post-project, .excerpt {
+	color: #333;
+}
+
+.title-post-blog>a:hover,.title-post-project>a:hover {
+	text-decoration: none;
+	color: #2a6496;
+}
+
+.post-header {
+	margin-top: 50px;
+}
+
+.post-header>h1 {
+	font-family: 'AmericanTypewriterLightA';
+	color: #000;
+	font-weight: bolder;
+}
+
+.navbar-nav.pull-right>li>.dropdown-menu{
+	left:0;
+}
+
+.container>h1#about-title{
+	margin-top: 50px;
+}
+
+.lightBlue{
+	color: #2a6496;
+}
+
+.main-content{
+	width: 600px;
+	font-size : 15px;
+	margin-top : 30px;
+	letter-spacing: 1px;
+}
+
