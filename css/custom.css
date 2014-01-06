@@ -35,11 +35,10 @@ li {
 	list-style: none;
 }
 
-#main{
+#main {
 	width: 905px;
 	margin-left: auto;
 	margin-right: auto;
-	
 }
 
 .navbar-brand {
@@ -104,11 +103,8 @@ li {
 	border: none;
 }
 
-li.dropdown.open>a:focus.dropdown-toggle,
-.nav>li>a:hover,
-.nav>li>a:focus,
-.navbar-default .navbar-brand:hover,
-.navbar-default .navbar-brand:focus {
+li.dropdown.open>a:focus.dropdown-toggle,.nav>li>a:hover,.nav>li>a:focus,.navbar-default .navbar-brand:hover,.navbar-default .navbar-brand:focus
+	{
 	background-color: #fff;
 	color: #000;
 }
@@ -194,15 +190,15 @@ ul#list-post-blog,ul#list-post-project {
 	width: 700px;
 }
 
-ul#list-post-blog>li, ul#list-post-project>li, .symbol-post-project {
+ul#list-post-blog>li,ul#list-post-project>li,.symbol-post-project {
 	margin-top: 20px;
 	font-size: 18px;
 	font-family: 'AmericanTypewriter';
 }
 
-.desc-project{
+.desc-project {
 	color: #333;
-	margin-left : 25px;
+	margin-left: 25px;
 }
 
 .date-post-blog {
@@ -210,19 +206,20 @@ ul#list-post-blog>li, ul#list-post-project>li, .symbol-post-project {
 }
 
 .desc-project {
-	width : 500px;
+	width: 500px;
 	font-size: 16px;
 	margin-top: 6px;
 	margin-left: 10px;
 }
 
-.excerpt{
+.excerpt {
 	width: 400px;
 	margin-top: 10px;
 	margin-left: 3px;
 }
 
-.title-post-blog>a, .title-post-project>a, .date-post-blog, .cat-post-project, .excerpt {
+.title-post-blog>a,.title-post-project>a,.date-post-blog,.cat-post-project,.excerpt
+	{
 	color: #333;
 }
 
@@ -237,26 +234,33 @@ ul#list-post-blog>li, ul#list-post-project>li, .symbol-post-project {
 	font-weight: bolder;
 }
 
-.navbar-nav.pull-right>li>.dropdown-menu{
-	left:0;
+.navbar-nav.pull-right>li>.dropdown-menu {
+	left: 0;
 }
 
-.container>h1.section-title{
+.container>h1.section-title {
 	margin-top: 50px;
 }
 
-.lightBlue{
+.lightBlue {
 	color: #2a6496;
 }
 
-.main-content{
+.main-content {
 	width: 600px;
-	font-size : 15px;
-	margin-top : 30px;
+	font-size: 15px;
+	margin-top: 0px;
 	letter-spacing: 1px;
 }
 
-hr{
+.content {
+	margin-top: 30px;
+}
+
+hr {
 	border-top: 1px solid #B6B4B4;
 }
 
+.link-underline {
+	text-decoration: underline;
+}
