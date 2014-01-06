@@ -35,6 +35,13 @@ li {
 	list-style: none;
 }
 
+#main{
+	width: 905px;
+	margin-left: auto;
+	margin-right: auto;
+	
+}
+
 .navbar-brand {
 	font-family: 'AmericanTypewriterLightA', Arial, sans-serif;
 	font-size: 36px;
@@ -164,7 +171,6 @@ div.navbar-collapse.collapse {
 }
 
 footer {
-	width: 549px;
 	margin-left: auto;
 	margin-right: auto;
 	float: right;
@@ -248,5 +254,9 @@ ul#list-post-blog>li, ul#list-post-project>li, .symbol-post-project {
 	font-size : 15px;
 	margin-top : 30px;
 	letter-spacing: 1px;
+}
+
+hr{
+	border-top: 1px solid #B6B4B4;
 }
 
