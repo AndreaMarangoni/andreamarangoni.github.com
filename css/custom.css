@@ -264,3 +264,7 @@ hr {
 .link-underline {
 	text-decoration: underline;
 }
+
+.not-visible{
+	visibility: hidden;
+}
