@@ -1,0 +1,16 @@
+@CHARSET "US-ASCII";
+
+#canvas {
+	background-color: black;
+	margin-top: -25px;
+	position: relative;
+	margin: 0px;
+	z-index: -1;
+	border: 1px solid black;
+}
+
+#fps {
+	color: black;
+	font-weight: bold;	
+	margin-left: 275px;
+}
