@@ -247,10 +247,13 @@ ul#list-post-blog>li,ul#list-post-project>li,.symbol-post-project {
 }
 
 .main-content {
-	width: 600px;
 	font-size: 15px;
 	margin-top: 0px;
 	letter-spacing: 1px;
+}
+
+.main-content,.post-header{
+	width: 600px;
 }
 
 .content {
@@ -265,6 +268,7 @@ hr {
 	text-decoration: underline;
 }
 
-.not-visible{
+.not-visible {
 	visibility: hidden;
 }
+
