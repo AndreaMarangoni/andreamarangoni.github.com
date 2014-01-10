@@ -7,7 +7,7 @@
 <!--<![endif]-->
 
 <head>
-<title> Projects |  Andrea
+<title> Pong Game |  Andrea
 	Marangoni</title>
 <meta name="description" content="">
 <meta charset="utf-8">
@@ -89,41 +89,43 @@
 </div>
 </div> 
 		<div class="container">
-	<h1 class="section-title">Projects</h1>
-	<p class="main-content">
-	In this section I will share my personal projects, my games and ideas...
-	</p>
-	<ul id="list-post-project">
-	  
-	  
-	  
-	  
-	    <li class="project-item">
-	      <span class="symbol-post-project">>> </span><span class="title-post-project"><a href="/project/Image-Processing-Tool">Image Processing Tool</a></span>
-	      <div class="desc-project">
-	     	
-	     		> <span class="excerpt lightBlue">University project that in my spare time I am maintaining and improving. It is a command line tool to apply filters on bitmap or raw images.</span>
-	      	
-	      </div>
-	    </li>
-	  
-	  
-	  
-	    <li class="project-item">
-	      <span class="symbol-post-project">>> </span><span class="title-post-project"><a href="/project/Pong-Game">Pong Game</a></span>
-	      <div class="desc-project">
-	     	
-	     		> <span class="excerpt lightBlue">Simple Javascript version of well known Atari's game of Pong. Developed just for have fun and play with HTML 5 Canvas.</span>
-	      	
-	      </div>
-	    </li>
-	  
-	  
-	  
-	  
-	  
-	  
-	</ul>
+	<div class="post-header">
+		<h1>Pong Game</h1>
+	</div>
+	<link rel="stylesheet" type="text/css" href="/css/pong/style.css">
+<script type="text/javascript" src="/js/pong/global.js"></script>
+<script type="text/javascript" src="/js/pong/board.js"></script>
+<script type="text/javascript" src="/js/pong/paddle.js"></script>
+<script type="text/javascript" src="/js/pong/ball.js"></script>
+<script type="text/javascript" src="/js/pong/pong.js"></script>
+<script type="text/javascript" src="/js/libs/jquery-2.0.3.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	document.onkeydown = keydown;
+	document.onkeyup = keyup;
+    run();
+});
+</script>
+<div id="canvas-content" style="">
+<p class="main-content">
+	About a year ago I wanted to play with HTML5's Canvas and animations, so I 
+	developed this little game using pure Javascript and, just to be 
+	comfortable,	<code>$(document).ready()</code> that is part of JQuery 
+	(and of course HTML 5). Now that I have a website I want to share this 
+	little game.
+</p>
+<p class="main-content">
+	The game can be played with W S keys for left player, and O K for right player. Have fun!!!
+</p>
+
+<p id="fps">Fps: 0</p>
+<canvas id="canvas"></canvas>
+	<div id="group-btn">
+		<button id="btn-start" onclick="start()">Start</button>
+		<button id="btn-reset" onclick="reset()">Reset</button>
+		<button id="btn-pause" onclick="pause()">Pause</button>
+	</div>
+</div>
 </div> 
 		
 <hr>
