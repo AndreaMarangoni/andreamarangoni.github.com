@@ -1,3 +1,4 @@
+
 $(document).ready(function() {
 	var SIZE = 14;
 	var WIDTH = 4;
@@ -35,4 +36,5 @@ $(document).ready(function() {
 	});
 
 	tiled_favicon();
+	
 });

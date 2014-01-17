@@ -26,9 +26,13 @@ body,div,img {
 	padding: 0px;
 }
 
-h1,h2,h3,h4,h5,h6,a,p {
+h1,h2,h3,h4,h5,h6,a,p,th {
 	color: black;
 	font-family: 'AmericanTypewriter';
+}
+
+h1,h2,h3,h4,h5,h6 {
+	margin-top: 15px;
 }
 
 li {
@@ -178,10 +182,6 @@ div.container {
 	margin-right: auto;
 }
 
-div.container>p {
-	
-}
-
 ul#list-post-blog,ul#list-post-project {
 	padding: 0;
 	margin-top: 50px;
@@ -232,6 +232,7 @@ ul#list-post-blog>li,ul#list-post-project>li,.symbol-post-project {
 	font-family: 'AmericanTypewriterLightA';
 	color: #000;
 	font-weight: bolder;
+	margin-top: 40px;
 }
 
 .navbar-nav.pull-right>li>.dropdown-menu {
@@ -252,8 +253,9 @@ ul#list-post-blog>li,ul#list-post-project>li,.symbol-post-project {
 	letter-spacing: 1px;
 }
 
-.main-content,.post-header{
+.main-content,.post-header,.content {
 	width: 600px;
+	font-size: 15px;
 }
 
 .content {
@@ -261,6 +263,7 @@ ul#list-post-blog>li,ul#list-post-project>li,.symbol-post-project {
 }
 
 hr {
+	margin-top: 50px;
 	border-top: 1px solid #B6B4B4;
 }
 
