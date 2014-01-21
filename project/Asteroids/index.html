@@ -7,7 +7,7 @@
 <!--<![endif]-->
 
 <head>
-<title> Projects |  Andrea
+<title> Asteroids |  Andrea
 	Marangoni</title>
 <meta name="description" content="">
 <meta charset="utf-8">
@@ -89,50 +89,45 @@
 </div>
 </div> 
 		<div class="container">
-	<h1 class="section-title">Projects</h1>
+	<div class="post-header">
+		<h1>Asteroids</h1>
+	</div>
+	<link rel="stylesheet" type="text/css" href="/css/asteroids/style.css">
+<script type="text/javascript" src="/js/libs/jquery-2.0.3.min.js"></script>
+<script type="text/javascript" src="/js/asteroids/set.js"></script>
+<script type="text/javascript" src="/js/asteroids/config.js"></script>
+<script type="text/javascript" src="/js/asteroids/imageloader.js"></script>
+<script type="text/javascript" src="/js/asteroids/imageinfo.js"></script>
+<script type="text/javascript" src="/js/asteroids/global.js"></script>
+<script type="text/javascript" src="/js/asteroids/ship.js"></script>
+<script type="text/javascript" src="/js/asteroids/timer.js"></script>
+<script type="text/javascript" src="/js/asteroids/sprite.js"></script>
+<script type="text/javascript" src="/js/asteroids/asteroids.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		document.onkeydown = keydown;
+		document.onkeyup = keyup;
+		document.onmousedown = mouse;
+		run();
+	});
+</script>
+<div id="canvas-content" style="">
 	<p class="main-content">
-	In this section I will share my personal projects, my games and ideas...
+		Once again I wanted to play a little bit with the canvas of <code>HTML5</code>. It is really amazing 
+		to develop animation and interaction with this tool. It is a porting from my original project 
+		in <code>Python</code>, and I used only <code>Javascript</code>and <code>jQuery</code>.
 	</p>
-	<ul id="list-post-project">
-	  
-	  
-	  
-	  
-	    <li class="project-item">
-	      <span class="symbol-post-project">>> </span><span class="title-post-project"><a href="/project/Image-Processing-Tool">Image Processing Tool</a></span>
-	      <div class="desc-project">
-	     	
-	     		> <span class="excerpt lightBlue">University project that in my spare time I am maintaining and improving. It is a command line tool to apply filters on bitmap or raw images.</span>
-	      	
-	      </div>
-	    </li>
-	  
-	  
-	  
-	    <li class="project-item">
-	      <span class="symbol-post-project">>> </span><span class="title-post-project"><a href="/project/Asteroids">Asteroids</a></span>
-	      <div class="desc-project">
-	     	
-	     		> <span class="excerpt lightBlue">Personal version of the game Asteroids. Originally I wrote it in Python. This is the porting in Javascript using Canvas. Originally there was also the audio but it is copyrighted.</span>
-	      	
-	      </div>
-	    </li>
-	  
-	  
-	  
-	    <li class="project-item">
-	      <span class="symbol-post-project">>> </span><span class="title-post-project"><a href="/project/Pong-Game">Pong Game</a></span>
-	      <div class="desc-project">
-	     	
-	     		> <span class="excerpt lightBlue">Simple Javascript version of well known Atari's game of Pong. Developed just for have fun and play with HTML 5 Canvas.</span>
-	      	
-	      </div>
-	    </li>
-	  
-	  
-	  
-	  
-	</ul>
+	<p class="main-content">The game can be played with J I L keys to
+		move the ship, SPACEBAR to shoot, R to restart the game, and P to put on
+		pause the game. Have fun!!!</p>
+	<p class="main-content">
+		<h2>Credits</h2>
+	</p>
+	<p class="main-content">Art assets created by Kim Lathrop</p>
+	<p class="main-content">requestAnimFrame by Paul Irish</p>
+	<p id="fps">Fps: 0</p>
+	<canvas id="canvas" tabindex='1'></canvas>
+</div>
 </div>
 		
 <hr>
