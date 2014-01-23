@@ -7,9 +7,9 @@
 <!--<![endif]-->
 
 <head>
-<title> Projects |  Andrea
+<title> Developing Qt on Eclipse without plugins |  Andrea
 	Marangoni</title>
-<meta name="description" content="Andrea Marangoni's personal projects, games and ideas. Image Processing games animation embedded">
+<meta name="description" content="How to develop compile qt projects with eclipse without plugins QtCreator">
 <meta charset="utf-8">
 <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
 <meta name="author" content="Andrea Marangoni">
@@ -89,52 +89,92 @@
 </div>
 </div> 
 		<div class="container">
-	<h1 class="section-title">Projects</h1>
-	<p class="main-content">
-	In this section I will share my personal projects, my games and ideas...
-	</p>
-	<ul id="list-post-project">
-	  
-	  
-	  
-	  
-	  
-	  
-	    <li class="project-item">
-	      <span class="symbol-post-project">>> </span><span class="title-post-project"><a href="/project/Image-Processing-Tool">Image Processing Tool</a></span>
-	      <div class="desc-project">
-	     	
-	     		> <span class="excerpt lightBlue">University project that in my spare time I am maintaining and improving. It is a command line tool to apply filters on bitmap or raw images.</span>
-	      	
-	      </div>
-	    </li>
-	  
-	  
-	  
-	    <li class="project-item">
-	      <span class="symbol-post-project">>> </span><span class="title-post-project"><a href="/project/Asteroids">Asteroids</a></span>
-	      <div class="desc-project">
-	     	
-	     		> <span class="excerpt lightBlue">Personal version of the game Asteroids. Originally I wrote it in Python. This is the porting in Javascript using Canvas. Originally there was also the audio but it is copyrighted.</span>
-	      	
-	      </div>
-	    </li>
-	  
-	  
-	  
-	    <li class="project-item">
-	      <span class="symbol-post-project">>> </span><span class="title-post-project"><a href="/project/Pong-Game">Pong Game</a></span>
-	      <div class="desc-project">
-	     	
-	     		> <span class="excerpt lightBlue">Simple Javascript version of well known Atari's game of Pong. Developed just for have fun and play with HTML 5 Canvas.</span>
-	      	
-	      </div>
-	    </li>
-	  
-	  
-	  
-	  
-	</ul>
+	<div class="post-header">
+		<h1>Developing Qt on Eclipse without plugins</h1>
+		<p>22 January 2014</p>
+	</div>
+	<div class="content">
+		<p class="main-content"><p>I am still asking myself why do they discontinued the excellent <code>Qt</code> plugin for <code>Eclipse</code>..Why?!
+To develop such a thing like <code>QtCreator</code> that is really annoying,awful and impossible to work with? (IMHO)<br/>
+Well, for those like me that want still use Eclipse for developing Qt applications I will show you
+how to configure your environment.. linux environment indeed.</p>
+
+<p>Once you created your project in your workspace, open a shell. For this tutorial we will use as project name <code>MyQtProject</code>.<br/>
+We have to move to project directory, so:</p>
+
+<div class="highlight"><pre><code class="bash"><span class="c"># cd workspace/MyQtProject</span>
+</code></pre></div>
+
+
+<p>We have to create our project file with extension <code>.pro</code>:</p>
+
+<div class="highlight"><pre><code class="bash"><span class="c"># qmake -project</span>
+</code></pre></div>
+
+
+<p>(I will not make a digression telling you how to edit your <code>.pro</code> file. You know that every source file
+you create you should mention on it, etc, etc..)</p>
+
+<p>Then we should create a main source code to start with.
+This will help us to achive two things:</p>
+
+<ol>
+<li>Eclipse will automatically generate a makefile and will guarantee the access to all configurations of the project;</li>
+<li>Eclipse will create the Debug and Release directories, so our project will result sorted as an usual Eclipse project.</li>
+</ol>
+
+
+<p>So we have only to create a <code>main.cpp</code> file.</p>
+
+<div class="highlight"><pre><code class="c++">  <span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span>
+</code></pre></div>
+
+
+<p>Then we have to build it.  (My shortcut is <code>Alt+b</code>). <br/>
+Eclipse will create a <code>Debug</code> folder with a <code>makefile</code> and other files. (Please notice the lower case of <code>makefile</code>)</p>
+
+<p>Now; right click on the project &rarr; <code>Properties</code> &rarr; <code>C/C++ Build</code> &rarr; <code>Settings</code>.</p>
+
+<h3>Tool Settings tab</h3>
+
+<p>Here you should configure at least <code>Libraries</code> specifying the path to <code>qt</code> libraries. In my environment located at <code>/usr/lib/qt4/</code>.</p>
+
+<p>Another thing to configure could be the include path to have an help (shortcut <code>Ctrl+SPACEBAR</code>) when coding.<br/>
+Under <code>GCC C++ Compiler</code> &rarr; <code>Includes</code> you will specify:</p>
+
+<pre><code> /usr/include/qt4/Qt
+ /usr/include/qt4/QtCore
+ /usr/include/qt4/QtGui
+</code></pre>
+
+<h3>Build Steps tab</h3>
+
+<p>Under <code>pre-build step</code> &rarr; <code>Command</code> you will write:</p>
+
+<p><code>./qmake -makefile ../MyQtProject.pro</code></p>
+
+<h3>C/C++ Build</h3>
+
+<p>Now on the left tree click over <code>C/C++ Build</code>.
+Here you have to un-check the box <code>Use default build command</code>.<br/>
+Then you have to specify another Build command. Instead of <code>make</code> write :  <code>make -f Makefile</code></p>
+
+<h3>Generate Makefiles automatically</h3>
+
+<p>Finally you have to un-check the property <code>Generate Makefiles automatically</code>.</p>
+
+<p>That's it!</p>
+
+<h3>To remember</h3>
+
+<p>Now you are able to compile your project simply with your shortcut or on your preferred way, but you have
+to remember a thing.<br/>
+When you want to get access to the configuration section located at <code>Project</code> &rarr; <code>Properties</code> &rarr; <code>C/C++ Build</code> &rarr; <code>Settings</code>
+<strong>you have to check</strong> <code>Generate Makefiles automatically</code> and click <code>Apply</code>. And then to compile your project you have to un-check the same configuration and click <code>Apply</code> again.</p>
+</p>
+	</div>
 </div>
 		
 <hr>
