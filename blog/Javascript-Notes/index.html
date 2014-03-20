@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+<title> Javascript Notes |  Andrea
+	Marangoni</title>
+<meta name="description" content="javascript:the Good Parts by Douglas Crockford.">
+<meta charset="utf-8">
+<!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+<meta name="author" content="Andrea Marangoni">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/css/custom.css">
+<script src="/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+</head>
+
+<body>
+	<!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+	<div id="main">
+		
+<div id="header">
+	<div id="image-container">
+		<img id="image" src="/img/AndreaMarangoni.jpg" alt="London"/>
+	</div>
+	<div id="line-menu">
+	<div id="vertical-line"></div>
+	<div id="menu" class="navbar  navbar-default navbar-fixed-top"
+		role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target=".navbar-collapse">
+					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<p class="navbar-brand"> ANDREA<br>
+					<br>MARANGONI
+				</p>
+			</div>
+			<div class="navbar-collapse collapse">
+	<ul class="nav navbar-nav pull-right">
+		<li id="home"><a href="/"><div class="hr-line">
+					<p>HOME</p>
+				</div></a></li>
+		<li id="about"><a href="/about"><div class="hr-line">
+					<p>ABOUT</p>
+				</div></a></li>
+		<li id="projects"><a href="/projects"><div class="hr-line">
+					<p>PROJECTS</p>
+				</div></a></li>
+		<li class="dropdown"><a href="#" class="dropdown-toggle"
+			data-toggle="dropdown">
+				<div class="hr-line">
+					<p style="color: black">CONTACTS</p>
+				</div>
+		</a>
+			<ul class="dropdown-menu">
+				<li><a href=mailto:andrea.marangoni.1984@gmail.com><i class="favicon-gmail"></i>gmail</a></li>
+				<li><a href=http://github.com/andreamarangoni target="_blank"><i
+						class="favicon-github" target="_blank"></i>github.com</a></li>
+				<li><a href=http://uk.linkedin.com/pub/andrea-marangoni/3b/267/6a/ target="_blank"><i
+						class="favicon-linkedin"></i>linkedin</a></li>
+				<li><a href=skype:andrea.marangoni.1984?call target="_blank"><i class="favicon-skype"></i>skype</a></li>
+				<li><a href=http://stackoverflow.com/users/1018585/andrea-marangoni target="_blank"><i
+						class="favicon-stack" target="_blank"></i>stackoverflow</a></li>
+				<li><a href=http://delicious.com/andreamarangoni target="_blank"><i
+						class="favicon-delicious" target="_blank"></i>delicious</a></li>
+				<li><a href=http://www.flickr.com/photos/62407856@N03/ target="_blank"><i
+						class="favicon-flickr"></i>flickr</a></li>
+				<li><a href=https://twitter.com/AndrewMarangoni target="_blank"><i
+						class="favicon-twitter"></i>twitter</a></li>
+			</ul></li>
+	</ul>
+</div>
+<!--/.navbar-collapse -->
+		</div>
+	</div>
+</div>
+</div> 
+		<div class="container">
+	<div class="post-header">
+		<h1>Javascript Notes</h1>
+		<p>17 March 2014</p>
+	</div>
+	<div class="content">
+		<p class="main-content"><h3>Introduction</h3>
+
+<p>Here I want to collect main concepts extracted from the book <em>'Javascript: the Good Parts'</em> by <em>Douglas Crockford</em>
+to have and to give to others, a quick reference. The book is really well written, simple and smooth, and offers plenty
+of great 'best practices'.</p>
+
+<h3>Object Literals</h3>
+
+<pre><code>    var flight = {
+        airline: "Oceanic",
+        number: 815,
+        departure: {
+            IATA: "SYD",
+            time: "2004-09-22 14:55",
+            city: "Sydney"
+        },
+        arrival: {
+            IATA: "LAX",
+            time: "2004-09-23 10:42",
+            city: "Los Angeles"
+        }   
+    };
+</code></pre>
+
+<h3>Retrieve Objects Values</h3>
+
+<p>Two ways to retrieve values: using <code>[]</code> or using the <code>.</code>.</p>
+
+<pre><code>    flight["number"]
+    flight.number
+</code></pre>
+
+<p>have the same result.
+We can generate a default value using <code>||</code>.</p>
+
+<pre><code>    var status = flight.status || "unknown";
+</code></pre>
+
+<p>Attempting to retrive a value from a nonexixting property generate an <code>undefined</code> value, and attempting
+to retrive a value from <code>undefined</code> will generate a <code>TypeError</code> exception.</p>
+
+<pre><code>    flight.equipment                            //undefined
+    flight.equipment.model                      //TypeError
+    flight.equipment &amp;&amp; flight.equipment.model  //to avoid exception..
+</code></pre>
+
+<h3>Updating Objects Values</h3>
+
+<p>Using assignment we can update a property's value. If the property already exists the value will be replaced,
+if the property doesn't exist the object will be augmented.</p>
+
+<pre><code>    flight["number"] = 719;    // update
+    flight.status = 'overdue'; // object augmented
+</code></pre>
+
+<h3>References</h3>
+
+<p>Objects are passed around by reference. They are never copied. That's it.</p>
+
+<h3>Prototype</h3>
+
+<p>Every object is linked to a prototype object from which it can inherit properties: <code>Object.prototype</code>.
+When you make a new object, you can select the object that should be its prototype.
+Let's add a <code>create()</code> method to <code>Object</code>. This method creates a new object that uses an old object as its prototype.</p>
+
+<pre><code>    Object.prototype.create = function(o) {
+        if (typeof Object.create !== 'function') {
+            Object.create = function(o) {
+                var F = function() {};
+                F.prototype = o;
+                return new F();
+            };
+        }
+    };
+
+    var another_flight = Object.create(flight);
+</code></pre>
+
+<p>The prototype link has no effect on updating. The prototype link is used only in retrieval.
+If we add a property to a prototype, that property will be visible to every object based on that prototype.</p>
+
+<pre><code>    flight.status = "cancelled";
+    another_flight.status // cancelled;
+</code></pre>
+
+<h3>Reflection</h3>
+
+<p><code>typeof</code> operator can be very useful to know the type of a property:</p>
+
+<pre><code>    typeof flight.number   //'number'
+    typeof flight.status   //'string'
+    typeof flight.arrival  //'object'
+    typeof flight.manifest //'undefined'
+</code></pre>
+
+<p>Must be careful with values like:</p>
+
+<pre><code>    typeof flight.toString //'function'
+    typeof flight.constructor //'function'
+</code></pre>
+
+<p>Because every property on the chain can produce a value we have to deal with it.
+Two approaches to deal with undesired values:</p>
+
+<ol>
+<li>1&#46; check and reject 'function' values</li>
+<li>2&#46; use the <code>hasOwnProperty</code> method</li>
+</ol>
+
+
+<h3>Delete</h3>
+
+<p>We can delete a property with the <code>delete</code> keyword, without touching the prototype linkage.
+On the other hand we can reveal property of the prototype linkage.</p>
+
+<h3>Function Objects</h3>
+
+<p>Function are objects. Objects are collections of name/value pairs having a hidden link to a prototype object.
+Function objects are linked to <code>Function.prototype</code> which is itself linked to <code>Object.prototype</code>.
+Functions can be stored in variables, objects, and arrays. Functions can be passed as arguments to
+functions, and functions can be returned from functions. Also, since functions are
+objects, functions can have methods. Function can be invoked.</p>
+
+<h3>Function Literals</h3>
+
+<p>Function objects are created with function literals:</p>
+
+<pre><code>    // Create a variable called add and store a function
+    // in it that adds two numbers.
+    var add = function (a, b) {
+        return a + b;
+    };
+</code></pre>
+
+<p>A function literal can appear anywhere that an expression can appear. Functions can
+be defined inside of other functions. An inner function of course has access to its
+parameters and variables. An inner function also enjoys access to the parameters and
+variables of the functions it is nested within. The function object created by a function
+literal contains a link to that outer context (<code>closure</code>).</p>
+
+<p>With parameters every function receive two extra parameters:</p>
+
+<ol>
+<li>&#8226; <code>this</code></li>
+<li>&#8226; <code>arguments</code></li>
+</ol>
+
+
+<p>The <code>this</code> value is determined by the <em>invocation pattern</em> used. The patterns differ in how the bonus
+parameter <code>this</code> is initialized.</p>
+
+<p>There are four different invocation patterns:</p>
+
+<ol>
+<li><p>1&#46; <strong>Method invocation pattern:</strong>  a function is stored as a property of an object, we call it a method.</p>
+
+<pre><code> //Create myObject. It has a value and an increment
+ //method. The increment method takes an optional
+ //parameter. If the argument is not a number, then 1
+ //is used as the default.
+ var myObject = {
+     value: 0,
+     increment: function (inc) {
+         this.value += typeof inc === 'number' ? inc : 1;
+     }
+ };
+ myObject.increment( );
+ document.writeln(myObject.value); // 1
+ myObject.increment(2);
+ document.writeln(myObject.value); // 3
+</code></pre>
+
+<p> The binding of this to the object happens at invocation time. This very late binding makes
+ functions that use this highly reusable.</p></li>
+<li><p>2&#46; <strong>Function invocation pattern:</strong> When a function is not the property of an object, then it is invoked as a function:</p>
+
+<pre><code> var sum = add(3, 4); // sum is 7
+</code></pre>
+
+<p> When a function is invoked with this pattern, <code>this</code> is bound to the global object. This was a mistake
+ in the design of the language. <strong>Workaround:</strong> If the method defines a variable and assigns it
+ the value of <code>this</code> , the inner function will have access to this through that variable. By
+ convention, the name of that variable is that :</p>
+
+<pre><code> // Augment myObject with a double method.
+ myObject.double = function ( ) {
+     var that = this; // Workaround.
+     var helper = function ( ) {
+         that.value = add(that.value, that.value);
+     };
+     helper(); // Invoke helper as a function.
+ };
+ // Invoke double as a method.
+ myObject.double( );
+ document.writeln(myObject.getValue( )); // 6
+</code></pre></li>
+<li><p>3&#46; <strong>Constructor invocation pattern:</strong> If a function is invoked with the new prefix, then a new object will be created with a
+ hidden link to the value of the function’s <code>prototype</code> member, and <code>this</code> will be bound to that new object.
+ The new prefix also changes the behavior of the return statement: if the return value is not an object,
+ then <code>this</code> (the new object) is returned instead.</p>
+
+<pre><code> // Create a constructor function called Quo.
+ // It makes an object with a status property.
+ var Quo = function (string) {
+     this.status = string;
+ };
+ // Give all instances of Quo a public method
+ // called get_status.
+ Quo.prototype.get_status = function ( ) {
+     return this.status;
+ };
+ // Make an instance of Quo.
+ var myQuo = new Quo("confused");
+ document.writeln(myQuo.get_status( )); // confused
+</code></pre>
+
+<p> Functions that are intended to be used with the new prefix are called <code>constructors</code>.
+ If a constructor is called without the new prefix, very bad things can happen without
+ a compile-time or runtime warning.<br/>
+ <em>Use of this style of constructor functions is not recommended.</em></p></li>
+<li><p>4&#46; <strong>Apply invocation pattern:</strong> The apply method lets us construct an array of arguments to use to
+ invoke a function. It also lets us choose the value of <code>this</code>. The apply method takes two parameters.
+ The first is the value that should be bound to <code>this</code> . The second is an array of parameters.</p>
+
+<pre><code> // Make an array of 2 numbers and add them.
+ var array = [3, 4];
+ var sum = add.apply(null, array); // sum is 7
+ // Make an object with a status member.
+ var statusObject = {
+     status: 'A-OK'
+ };
+ //statusObject does not inherit from Quo.prototype,
+ //but we can invoke the get_status method on
+ //statusObject even though statusObject does not have
+ //a getStatus method.
+ var status = Quo.prototype.getStatus.apply(statusObject); 
+ //status is 'A-OK'
+</code></pre></li>
+</ol>
+
+
+<h3>Augmenting Types</h3>
+
+<p>We can make a method available to all functions simply augmenting <code>Function.prototype</code>.</p>
+
+<pre><code>    //We no longer have to type the name of the prototype property
+    Function.prototype.method = function (name, func) {
+        this.prototype[name] = func;
+        return this;
+    };
+
+    //Extract the integer part of a number
+    Number.method('integer', function ( ) {
+        return Math[this &lt; 0 ? 'ceiling' : 'floor'](this);
+    });
+    document.writeln((-10 / 3).integer( )); // -3
+
+    String.method('trim', function ( ) {
+        return this.replace(/^\s+|\s+$/g, '');
+    });
+    document.writeln('"' + "  neat  ".trim( ) + '"'); 
+</code></pre>
+
+<h3>Functions scope</h3>
+
+<p>JavaScript does not have block scope even though its block syntax
+suggests that it does. This confusion can be a source of errors.
+It is best to declare all of the variables used in a function at the top of the function body.
+JavaScript does have function scope.</p>
+
+<h3>Closure</h3>
+
+<p>The good news about scope is that inner functions get access to the parameters and
+variables of the functions they are defined within. Exception made for <code>this</code> and <code>arguments</code>.<br/>
+We previously made a <code>myObject</code> that had a value and an increment method. Suppose we
+wanted to protect the value from unauthorized changes.
+Instead of initializing <code>myObject</code> with an object literal, we will initialize <code>myObject</code> by
+calling a function that returns an object literal. That function defines a value variable.
+That variable is always available to the <code>increment</code> and <code>getValue</code> methods, but
+the function’s scope keeps it hidden from the rest of the program:</p>
+
+<pre><code>    var myObject = function ( ) {
+        var value = 0;
+        return {
+                increment: function (inc) {
+                    value += typeof inc === 'number' ? inc : 1;
+            },
+            getValue: function ( ) {
+                return value;
+            }
+        };
+    }();
+</code></pre>
+
+<p>We are not assigning a function to <code>myObject</code>. We are assigning the result of invoking
+that function. Notice the <code>()</code> on the last line. The function returns an object containing two
+methods, and those methods continue to enjoy the privilege of access to the value variable.</p>
+
+<p>Let’s define a function to be used without the new prefix:</p>
+
+<pre><code>    // Create a maker function called quo. It makes an
+    // object with a get_status method and a private
+    // status property.
+    var quo = function (status) {
+        return {
+            get_status: function ( ) {
+                return status;
+            }
+        };
+    };
+    // Make an instance of quo.
+    var myQuo = quo("amazed");
+    document.writeln(myQuo.get_status( ));
+</code></pre>
+
+<p>When we call quo , it returns a new object containing a <code>get_status</code>
+method. <code>get_status</code> does not have access to a copy of the parameter; it has access to the
+parameter itself. This is possible because the function has access to the context in
+which it was created. This is called <code>closure</code>.</p>
+
+<h3>Modules</h3>
+
+<p>A module is a function or object
+that presents an interface but that hides its state and implementation. By using functions
+to produce modules, we can almost completely eliminate our use of global variables, thereby mitigating
+ one of JavaScript’s worst features.
+For example, suppose we want to augment String with a deentityify method. Its
+job is to look for HTML entities in a string and replace them with their equivalents.
+The ideal approach is to put it in a closure, and perhaps provide an extra method that can
+add additional entities:</p>
+
+<pre><code>    String.method('deentityify', function ( ) {
+        // The entity table. It maps entity names to
+        // characters.
+        var entity = {
+            quot: '"',
+            lt: '&lt;',
+            gt: '&gt;'
+        };
+        // Return the deentityify method.
+
+        return function ( ) {
+
+        //This is the deentityify method. It calls the string
+        //replace method, looking for substrings that start
+        //with '&amp;' and end with ';'. If the characters in
+        //between are in the entity table, then replace the
+        //entity with the character from the table. It uses
+        //a regular expression (Chapter 7).
+
+            return this.replace(/&amp;([^&amp;;]+);/g, function (a, b) {
+                var r = entity[b];
+                return typeof r === 'string' ? r : a;
+            });
+        };
+    }());
+</code></pre>
+
+<p>The general pattern of a module is a function that defines private variables and functions; creates
+privileged functions which, through closure, will have access to the private variables and functions;
+and that returns the privileged functions or stores them in an accessible place.
+It promotes information hiding and other good design practices.</p>
+
+<h3>Inheritance</h3>
+
+<p>JavaScript is a prototypal language, which means that objects inherit
+directly from other objects.</p>
+
+<h4>* Prototypal</h4>
+
+<p>You start by making a useful object. You can then make many more objects that are like that one.</p>
+
+<pre><code>    var myMammal = {
+        name : 'Herb the Mammal',
+        get_name : function ( ) {
+            return this.name;
+        },
+        says : function ( ) {
+            return this.saying || '';
+        }
+    };
+</code></pre>
+
+<p>Once we have an object that we like, we can make more instances with the <code>Object.create</code> method.
+We can then customize the new instances:</p>
+
+<pre><code>    var myCat = Object.create(myMammal);
+    myCat.name = 'Henrietta';
+    myCat.saying = 'meow';
+    myCat.purr = function (n) {
+            var i, s = '';
+            for (i = 0; i &lt; n; i += 1) {
+                if (s) {
+                s += '-';
+            }
+            s += 'r';
+        }
+        return s;
+    };
+
+    myCat.get_name = function ( ) {
+        return this.says( ) + ' ' + this.name + ' ' + this.says( );
+    };
+</code></pre>
+
+<p>This is <code>differential inheritance</code>. The problem is there is no <code>privacy</code>. Everything is public.</p>
+
+<h4>* Functional approach</h4>
+
+<p>We start by making a function that will produce objects. <br/>
+The function contains four steps:</p>
+
+<ol>
+<li><strong>1&#46;</strong> It creates a new object.</li>
+<li><strong>2&#46;</strong> It optionally defines private instance variables and methods. These are just ordinary <em>vars</em> of the function.</li>
+<li><strong>3&#46;</strong> It augments that new object with methods. Those methods will have privileged
+    access to the parameters and the <em>vars</em> defined in the second step.</li>
+<li><p><strong>4&#46;</strong> It returns that new object.</p>
+
+<pre><code>var constructor = function (spec, my) {
+    var that, other private instance variables;
+    my = my || {};
+    //Add shared variables and functions to my
+    that = a new object;
+    //Add privileged methods to that
+    return that;
+};
+</code></pre></li>
+</ol>
+
+
+<p>The <code>spec</code> object contains all of the information that the constructor needs to make an
+instance. The contents of the spec could be copied into private variables or transformed
+by other functions. Or the methods can access information from <code>spec</code> as they
+need it. (A simplification is to replace <code>spec</code> with a single value. This is useful when
+the object being constructed does not need a whole <code>spec</code> object.)
+The <code>my</code> object is a container of secrets that are shared by the constructors in the
+inheritance chain. The use of the <code>my</code> object is optional. If a <code>my</code> object is not passed in,
+then a <code>my</code> object is made. <br/>
+Declare the private instance variables and private methods for the object.
+The variables and inner functions of the constructor become the private members of the instance.
+The inner functions have access to <code>spec</code> and <code>my</code> and <code>that</code> and the private variables. <br/>
+Add the shared secrets to the my object. This is done by assignment:</p>
+
+<pre><code>    my.member = value;
+</code></pre>
+
+<p>It's time to make a new object and assign it to <code>that</code>. How?</p>
+
+<ul>
+<li>&#8226; We can use an object literal.</li>
+<li>&#8226; We can use the <code>Object.create</code> method on a prototype object.</li>
+<li>&#8226; We can call another functional constructor, passing it a <code>spec</code> object (possibly the
+same <code>spec</code> object that was passed to <code>this</code> constructor) and the <code>my</code> object.</li>
+</ul>
+
+
+<p>We augment <code>that</code>, adding the privileged methods that make up the object’s
+interface. We can assign new functions to members of <code>that</code>. Or, more securely, we
+can define the functions first as private methods, and then assign them to <code>that</code>:</p>
+
+<pre><code>    var methodical = function ( ) {
+    ...
+    };
+    that.methodical = methodical;
+</code></pre>
+
+<p>The advantage to defining methodical in two steps is that if other methods want to
+call methodical , they can call <code>methodical()</code> instead of <code>that.methodical()</code>. <br/>
+Finally we can return <code>that</code>.</p>
+</p>
+	</div>
+</div>
+		
+<hr>
+<footer>
+	<p>&copy; Andrea Marangoni 2013 - All Rights Reserved.</p>
+</footer>
+
+	</div>
+	
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.js"></script>
+	<script>
+		window.jQuery
+				|| document
+						.write('<script src="/js/vendor/jquery-1.10.1.js"><\/script>')
+	</script>
+
+	<script src="/js/vendor/bootstrap.min.js"></script>
+
+	<script src="/js/plugins.js"></script>
+	<script src="/js/main.js"></script>
+	<script src="/js/personal.js"></script>
+
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	
+	  ga('create', 'UA-46921933-1', 'andreamarangoni.github.io');
+	  ga('send', 'pageview');
+	</script>
+	
+</body>
+</html>

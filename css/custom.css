@@ -8,27 +8,24 @@
 }
 
 @font-face {
-	font-family: 'AmericanTypewriterLight';
-	src: url('/fonts/americantypewriter_light.eot');
-	src: local('American Typewriter Light'), local('Typewriter Light'),
-		url('/fonts/americantypewriter_light.ttf') format('truetype');
+	font-family: 'uic';
+	src: local('uic'), url('/fonts/uic.ttf') format('truetype');
 }
 
 @font-face {
-	font-family: 'AmericanTypewriter';
-	src: url('/fonts/americantypewriter.eot');
-	src: local('American Typewriter'), local('Typewriter'),
-		url('/fonts/americantypewriter.ttf') format('truetype');
+	font-family: 'lucky';
+	src: local('lucky'), url('/fonts/lucky.ttf') format('truetype');
 }
+
 
 body,div,img {
 	margin: 0px;
 	padding: 0px;
 }
 
-h1,h2,h3,h4,h5,h6,a,p,th {
+h1,h2,h3,h4,h5,h6,a,p,th,ul,ol,li {
 	color: black;
-	font-family: 'AmericanTypewriter';
+	font-family: 'uic';
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -46,13 +43,12 @@ li {
 }
 
 .navbar-brand {
-	font-family: 'AmericanTypewriterLightA', Arial, sans-serif;
+	font-family: 'AmericanTypewriterLightA';
 	font-size: 36px;
 	margin-top: 1.6em;
 }
 
 .navbar-nav {
-	font-family: 'AmericanTypewriter', Arial, sans-serif;
 	margin-top: 8.5em;
 	margin-left: auto;
 	margin-right: auto;
@@ -193,7 +189,6 @@ ul#list-post-blog,ul#list-post-project {
 ul#list-post-blog>li,ul#list-post-project>li,.symbol-post-project {
 	margin-top: 20px;
 	font-size: 18px;
-	font-family: 'AmericanTypewriter';
 }
 
 .desc-project {
